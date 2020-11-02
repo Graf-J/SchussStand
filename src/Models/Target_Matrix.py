@@ -18,7 +18,12 @@ class Target_Matrix:
     def checkHit(self, x, y):
         d = math.sqrt((x - self.Target.x)**2 + (y - self.Target.y)**2)
         if d > 40 + 5: # 5 is the radius of my Bullet
-            return False
+            return -1
         else:
             self.changeTargetPosition()
-            return True
+            if d < 5+5:
+                return 3
+            elif d < 24+5:
+                return 2
+            elif d < 41+5:
+                return 1
