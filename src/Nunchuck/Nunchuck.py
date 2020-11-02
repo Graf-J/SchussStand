@@ -46,10 +46,13 @@ class Nunchuck:
     return butc == 0
 
   def button_z(self):
-    data = self.read()
-    butc = (data[5] & 0x01)
+    try:
+      data = self.read()
+      butc = (data[5] & 0x01)
 
-    return butc == 0
+      return butc == 0
+    except:
+      return True
 
   def joystick_x(self):
     try:
