@@ -15,7 +15,7 @@ def redrawGameWindow():
     pygame.display.update()
     screen.fill((169, 87, 15))
 
-# MainLoop
+# GameLoop
 run = True
 while run:
     clock.tick(60)
